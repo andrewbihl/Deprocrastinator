@@ -29,6 +29,22 @@
     self.tableColors = [NSMutableArray new];
 
 }
+- (IBAction)onRightSwipe:(UISwipeGestureRecognizer*)sender {
+    NSLog(@"Swiped right");
+    UITableViewCell* swipedCell = (UITableViewCell*)sender.view;
+    NSIndexPath* swipedCellPath = [self.tableView indexPathForCell:swipedCell];
+    UIColor* currentColor = [self.tableColors objectAtIndex:swipedCellPath.row];
+    //Cycle colors if already colored.
+    if (currentColor==[UIColor greenColor])
+        [self.tableColors replaceObjectAtIndex:swipedCellPath.row withObject:[UIColor orangeColor]];
+    else if (currentColor == [UIColor orangeColor])
+        [self.tableColors replaceObjectAtIndex:swipedCellPath.row withObject:[UIColor redColor]];
+    else if (currentColor == [UIColor redColor])
+        [self.tableColors replaceObjectAtIndex:swipedCellPath.row withObject:[UIColor greenColor]];
+    
+    [self.tableView reloadData];
+    
+}
 
 -(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
     return true;
@@ -50,7 +66,10 @@
         [self.tableColors removeObjectAtIndex:indexPath.row];
     }
     else{
-        [self.tableColors replaceObjectAtIndex:indexPath.row withObject:[UIColor greenColor]];
+        if ([self.tableColors objectAtIndex:indexPath.row]==[UIColor blackColor])
+            [self.tableColors replaceObjectAtIndex:indexPath.row withObject:[UIColor greenColor]];
+        else
+            [self.tableColors replaceObjectAtIndex:indexPath.row withObject:[UIColor blackColor]];
     }
     [self.tableView reloadData];
 }
@@ -62,6 +81,14 @@
     return cell;
 }
 
+-(BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath{
+    return true;
+}
+
+-(void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath{
+    
+}
+    
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.tableValues.count;
     
@@ -76,6 +103,7 @@
 }
 - (IBAction)onEditButtonPressed:(UIBarButtonItem *)sender {
     
+    [self.tableView setEditing:!self.tableView.editing];
     if (self.isEditing){
         sender.title = @"Edit";
         self.isEditing = false;

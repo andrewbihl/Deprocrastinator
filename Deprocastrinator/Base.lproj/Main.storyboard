@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ct7-Wd-3Ub">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ct7-Wd-3Ub">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -26,7 +26,7 @@
                                         <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="CellID" tableViewCell="DrT-NN-eCX" id="GOP-CV-Fg1">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <gestureRecognizers/>
@@ -106,17 +106,17 @@
                                 <exclude reference="4Ve-wi-5CU"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="L1A-U9-kSc"/>
-                                <exclude reference="Pwx-KJ-nTx"/>
-                                <exclude reference="XXx-KZ-cTU"/>
-                                <exclude reference="giy-iL-Ofl"/>
+                                <exclude reference="v9r-EX-Pjq"/>
                                 <exclude reference="P1a-5w-Hx6"/>
                                 <exclude reference="T94-bP-a3e"/>
                                 <exclude reference="TZa-Uy-N1O"/>
                                 <exclude reference="lT1-0y-d6h"/>
+                                <exclude reference="L1A-U9-kSc"/>
+                                <exclude reference="Pwx-KJ-nTx"/>
+                                <exclude reference="XXx-KZ-cTU"/>
+                                <exclude reference="giy-iL-Ofl"/>
                                 <exclude reference="qWk-Tz-J63"/>
                                 <exclude reference="vpR-0e-Yk3"/>
-                                <exclude reference="v9r-EX-Pjq"/>
                                 <exclude reference="wk2-jH-Xx8"/>
                             </mask>
                         </variation>
@@ -125,10 +125,7 @@
                                 <include reference="4Ve-wi-5CU"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="L1A-U9-kSc"/>
-                                <include reference="Pwx-KJ-nTx"/>
-                                <include reference="XXx-KZ-cTU"/>
-                                <include reference="giy-iL-Ofl"/>
+                                <include reference="v9r-EX-Pjq"/>
                                 <exclude reference="OBh-af-FXB"/>
                                 <include reference="P1a-5w-Hx6"/>
                                 <exclude reference="SbA-e6-jQ7"/>
@@ -136,13 +133,16 @@
                                 <include reference="TZa-Uy-N1O"/>
                                 <include reference="lT1-0y-d6h"/>
                                 <exclude reference="qp9-Za-16Y"/>
+                                <include reference="L1A-U9-kSc"/>
+                                <include reference="Pwx-KJ-nTx"/>
+                                <include reference="XXx-KZ-cTU"/>
+                                <include reference="giy-iL-Ofl"/>
                                 <exclude reference="8Mx-fO-UKs"/>
                                 <exclude reference="plJ-MT-NG5"/>
                                 <include reference="qWk-Tz-J63"/>
                                 <exclude reference="vCA-Yv-Vy4"/>
                                 <include reference="vpR-0e-Yk3"/>
                                 <exclude reference="yd6-Pg-TGZ"/>
-                                <include reference="v9r-EX-Pjq"/>
                                 <exclude reference="IXX-We-QOx"/>
                                 <include reference="wk2-jH-Xx8"/>
                             </mask>
@@ -161,7 +161,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="jek-H8-8Vm"/>
+                <swipeGestureRecognizer direction="right" id="jek-H8-8Vm">
+                    <connections>
+                        <action selector="onRightSwipe:" destination="BYZ-38-t0r" id="FVe-SQ-pEq"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1056" y="306"/>
         </scene>
