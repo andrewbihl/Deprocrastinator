@@ -22,7 +22,6 @@
 
 
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     for (UIGestureRecognizer* cur in self.view.gestureRecognizers){
